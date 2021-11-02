@@ -106,7 +106,10 @@ int main(int argc, char *argv[]){
 				fprintf(output,"\n%s\n", csv_contents[i][desc[j]].c_str());
 			}
 		}
-		fprintf(output, "[[Category:%s]]</text>\n", category.c_str());
+		if(category.size()!=0){
+			fprintf(output, "\n[[Category:%s]]", category.c_str());
+		} 
+		fprintf(output, "</text>\n");
 		fprintf(output, "\t\t\t<minor />\n");
 		fprintf(output, "\t\t</revision>\n");
 		fprintf(output, "\t</page>\n");
